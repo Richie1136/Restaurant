@@ -5,6 +5,7 @@ import Navigation from "../navigation/Navigation";
 import Recipe from "../recipe/Recipe";
 import Appetizer from "../appetizer/Appetizer";
 import Dessert from "../dessert/Dessert";
+import Beverage from "../beverage/Beverage";
 
 const AllRoutes = () => (
   <>
@@ -15,6 +16,7 @@ const AllRoutes = () => (
       <Route path="/recipe/:id" element={<Recipe />} />
       <Route path='/apps' element={<Appetizer />} />
       <Route path='/dessert' element={<Dessert />} />
+      <Route path='/beverages' element={<Beverage />} />
     </Routes>
   </>
 )

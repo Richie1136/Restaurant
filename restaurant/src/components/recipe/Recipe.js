@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from '../loading/Loading'
+import './Recipe.css'
 
 const Recipe = () => {
 
@@ -31,16 +32,16 @@ const Recipe = () => {
 
 
   return (
-    <>
+    <div className='detail'>
       <div>
-        <h2 style={{ 'marginBottom': '10px' }}>{recipeDetails.title}</h2>
+        <h2 style={{ marginBottom: '10px' }}>{recipeDetails.title}</h2>
         <img src={recipeDetails.image} alt={recipeDetails.title}></img>
       </div>
       <div>
         <button className={activeTab === 'instructions' ? 'active' : ''} onClick={() => setActiveTab('instructions')}>Instructions</button>
         <button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab('ingredients')}>Ingredients</button>
         {activeTab === 'instructions' && (
-          <div>
+          <div className="product-info">
             <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h3>
             <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} style={{ 'width': '50%', 'marginTop': '15px' }}></h3>
           </div>
@@ -54,7 +55,7 @@ const Recipe = () => {
           </ul>
         )}
       </div>
-    </>
+    </div>
   )
 }
 

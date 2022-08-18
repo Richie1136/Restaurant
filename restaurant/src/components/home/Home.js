@@ -9,31 +9,31 @@ const Home = () => {
   const KEY = process.env.REACT_APP_FOOD_API_KEY
 
 
-  const [allFoods, setAllFoods] = useState([])
+  const [allProducts, setAllProducts] = useState([])
 
   useEffect(() => {
-    const getAllFoods = async () => {
+    const getAllProducts = async () => {
       try {
         const response = await fetch(`${baseUrl}?apiKey=${KEY}&number=30`)
         const data = await response.json()
         console.log(data)
-        setAllFoods(data)
+        setAllProducts(data)
       } catch (error) {
         console.log(error)
       }
     }
-    getAllFoods()
+    getAllProducts()
   }, [KEY])
 
   return (
     <>
       <div className="all-food">
-        {allFoods?.results?.map(({ title, image, id }) => (
+        {allProducts?.results?.map(({ title, image, id }) => (
           <div key={id}>
             <Card>
               <Link to={`/recipe/${id}`}>
-                <h2>{title}</h2>
-                <img src={image} alt={title} />
+                <h2 style={{ flexWrap: 'nowrap', fontSize: '18px' }}>{title}</h2>
+                <img style={{ display: 'block', marginLeft: 'auto', marginTop: '20px', marginRight: 'auto', width: '100%' }} src={image} alt={title} />
               </Link>
             </Card>
           </div>
