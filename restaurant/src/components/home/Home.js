@@ -29,61 +29,18 @@ const Home = () => {
     <>
       <div className="all-food">
         {allFoods?.results?.map(({ title, image, id }) => (
-          <Card key={id}>
-            <h2>{title}</h2>
-            <img src={image} alt={title} />
-          </Card>
+          <div key={id}>
+            <Card>
+              <Link to={`/recipe/${id}`}>
+                <h2>{title}</h2>
+                <img src={image} alt={title} />
+              </Link>
+            </Card>
+          </div>
         ))}
       </div>
     </>
   )
-
 }
 
 export default Home
-
-
-// import { useState, useEffect, useCallback } from 'react'
-// import { Link } from 'react-router-dom'
-
-// const Home = () => {
-
-//   const [veggie, setVeggie] = useState([])
-//   const KEY = process.env.REACT_APP_FOOD_API_KEY
-
-//   const getVeggie = useCallback(async () => {
-
-//     const check = localStorage.getItem('veggie')
-
-//     if (check) {
-//       setVeggie(JSON.parse(check))
-//     } else {
-//       const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${KEY}&number=5&tags=vegetarian`)
-//       const data = await api.json()
-//       localStorage.setItem('veggie', JSON.stringify(data.recipes))
-//       setVeggie(data.recipes)
-//     }
-//   }, [KEY])
-
-//   useEffect(() => {
-//     getVeggie()
-//   }, [getVeggie])
-
-//   return (
-//     <div className='row'>
-//       <h3>Veggie Picks</h3>
-//       {veggie.map((rec) => {
-//         return (
-//           <div key={rec.id}>
-//             <Link to={`/recipe/${rec.id}`}>
-//               <p>{rec.title}</p>
-//               <img src={rec.image} alt={rec.title} />
-//             </Link>
-//           </div>
-//         )
-//       })}
-//     </div>
-//   )
-// }
-
-// export default Home

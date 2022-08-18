@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { baseUrl } from '../../api/Api'
 import Card from '../card/Card'
 import './MainCourse.css'
+import { Link } from 'react-router-dom'
+
 
 
 const MainCourse = () => {
@@ -24,10 +26,12 @@ const MainCourse = () => {
 
   return (
     <div className='main'>
-      {main?.results.map(({ title, image }) => (
-        <Card>
-          <h2>{title}</h2>
-          <img src={image} alt={title} />
+      {main?.results.map(({ title, image, id }) => (
+        <Card key={id}>
+          <Link to={`/recipe/${id}`}>
+            <h2>{title}</h2>
+            <img src={image} alt={title} />
+          </Link>
         </Card>
       ))}
     </div>
