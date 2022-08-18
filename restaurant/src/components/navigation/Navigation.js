@@ -7,11 +7,14 @@ const Navigation = () => {
       <NavLink to='/'>
         <span>All Foods</span>
       </NavLink>
+      <NavLink to='/apps'>
+        <span>Appetizers</span>
+      </NavLink>
       <NavLink to='/main'>
         <span>Main Course</span>
       </NavLink>
-      <NavLink to='/standings'>
-        <span>Standings</span>
+      <NavLink to='/dessert'>
+        <span>Desserts</span>
       </NavLink>
     </nav>
   )

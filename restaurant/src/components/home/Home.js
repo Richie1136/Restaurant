@@ -23,7 +23,7 @@ const Home = () => {
       }
     }
     getAllFoods()
-  }, [])
+  }, [KEY])
 
   return (
     <>

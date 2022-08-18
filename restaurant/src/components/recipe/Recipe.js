@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { baseUrl } from '../../api/Api'
+import Loading from '../loading/Loading'
 
 const Recipe = () => {
 
@@ -11,19 +11,23 @@ const Recipe = () => {
   const KEY = process.env.REACT_APP_FOOD_API_KEY
 
 
-  let params = useParams()
+  const params = useParams()
+
+  const obj = new URLSearchParams(params)
+  const term = obj.get('id')
 
 
   useEffect(() => {
     const getDetails = async () => {
-      const response = await fetch(`https://api.spoonacular.com/recipes/${params.id}/information?apiKey=${KEY}`)
+      const response = await fetch(`https://api.spoonacular.com/recipes/${term}/information?apiKey=${KEY}`)
       const data = await response.json()
       setRecipeDetails(data)
     }
     getDetails()
-  }, [KEY, params.id])
+  }, [KEY, term])
 
 
+  if (!recipeDetails) return <Loading />
 
 
   return (
@@ -43,11 +47,10 @@ const Recipe = () => {
         )}
         {activeTab === 'ingredients' && (
           <ul>
-            {recipeDetails?.extendedIngredients.map((ingredient) => {
-              return (
-                <li key={ingredient.id}>{ingredient.original}</li>
-              )
-            })}
+            {recipeDetails?.extendedIngredients.map((ingredient) => (
+              <li key={ingredient.id}>{ingredient.original}</li>
+            )
+            )}
           </ul>
         )}
       </div>
