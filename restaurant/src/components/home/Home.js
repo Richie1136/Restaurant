@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Card from "../card/Card"
 import './Home.css'
+import Loading from "../loading/Loading"
 
 const Home = () => {
 
@@ -25,6 +26,8 @@ const Home = () => {
     getAllProducts()
   }, [KEY])
 
+  if (!allProducts) return <Loading />
+
   return (
     <>
       <div className="all-food">
@@ -32,8 +35,8 @@ const Home = () => {
           <div key={id}>
             <Card>
               <Link to={`/recipe/${id}`}>
-                <h2 style={{ flexWrap: 'nowrap', fontSize: '18px' }}>{title}</h2>
-                <img style={{ display: 'block', marginLeft: 'auto', marginTop: '20px', marginRight: 'auto', width: '100%' }} src={image} alt={title} />
+                <h2 className="product-name">{title}</h2>
+                <img className="product-image" src={image} alt={title} />
               </Link>
             </Card>
           </div>

@@ -3,6 +3,7 @@ import { baseUrl } from "../../api/Api"
 import { Link } from "react-router-dom"
 import Card from "../card/Card"
 import './Dessert.css'
+import Loading from "../loading/Loading"
 
 
 const Dessert = () => {
@@ -22,14 +23,16 @@ const Dessert = () => {
     fetchDesserts()
   }, [KEY])
 
+  if (!desserts) return <Loading />
+
 
   return (
     <div className="dessert">
       {desserts?.results.map(({ title, image, id }) => (
         <Card key={id}>
           <Link to={`/recipe/${id}`}>
-            <h2>{title}</h2>
-            <img src={image} alt={title} />
+            <h2 className="product-name">{title}</h2>
+            <img className="product-image" src={image} alt={title} />
           </Link>
         </Card>
       ))}

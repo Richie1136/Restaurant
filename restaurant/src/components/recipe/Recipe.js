@@ -43,6 +43,7 @@ const Recipe = () => {
         {activeTab === 'instructions' && (
           <div className="product-info">
             <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h3>
+            <br />
             <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} style={{ 'width': '50%', 'marginTop': '15px' }}></h3>
           </div>
         )}

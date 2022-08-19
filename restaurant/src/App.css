@@ -6,3 +6,15 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.product-name {
+  flex-wrap: nowrap;
+  font-size: 18px;
+}
+.product-image {
+  display: "block";
+  margin-left: auto;
+  margin-top: 20px;
+  margin-right: auto;
+  width: 100%;
+}

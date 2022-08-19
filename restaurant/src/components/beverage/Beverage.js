@@ -27,8 +27,8 @@ const Beverage = () => {
       {beverages?.results.map(({ title, image, id }) => (
         <Card key={id}>
           <Link to={`/recipe/${id}`}>
-            <h2>{title}</h2>
-            <img src={image} alt={title} />
+            <h2 className='product-name'>{title}</h2>
+            <img className='product-image' src={image} alt={title} />
           </Link>
         </Card>
       ))}

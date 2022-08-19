@@ -3,6 +3,7 @@ import { baseUrl } from '../../api/Api'
 import Card from '../card/Card'
 import './MainCourse.css'
 import { Link } from 'react-router-dom'
+import Loading from '../loading/Loading'
 
 
 
@@ -23,14 +24,16 @@ const MainCourse = () => {
     mainDish()
   }, [KEY])
 
+  if (!main) return <Loading />
+
 
   return (
     <div className='main'>
       {main?.results.map(({ title, image, id }) => (
         <Card key={id}>
           <Link to={`/recipe/${id}`}>
-            <h2>{title}</h2>
-            <img src={image} alt={title} />
+            <h2 className='product-name'>{title}</h2>
+            <img className='product-image' src={image} alt={title} />
           </Link>
         </Card>
       ))}
