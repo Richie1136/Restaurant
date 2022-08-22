@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="all-food">
+      <div className="item-detail">
         {allProducts?.results?.map(({ title, image, id }) => (
           <div key={id}>
             <Card>

@@ -2,7 +2,6 @@ import { useState, useEffect } from "react"
 import { baseUrl } from "../../api/Api"
 import { Link } from "react-router-dom"
 import Card from "../card/Card"
-import './Dessert.css'
 import Loading from "../loading/Loading"
 
 
@@ -27,7 +26,7 @@ const Dessert = () => {
 
 
   return (
-    <div className="dessert">
+    <div className="item-detail">
       {desserts?.results.map(({ title, image, id }) => (
         <Card key={id}>
           <Link to={`/recipe/${id}`}>

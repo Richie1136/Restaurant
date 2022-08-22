@@ -18,3 +18,8 @@ a {
   margin-right: auto;
   width: 100%;
 }
+
+.item-detail {
+  display: flex;
+  flex-wrap: wrap;
+}

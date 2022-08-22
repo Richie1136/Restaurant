@@ -1,8 +1,5 @@
 import { useState, useEffect } from 'react'
-import { baseUrl } from '../../api/Api'
 import { useParams } from 'react-router-dom'
-import Card from '../card/Card'
-import { Link } from 'react-router-dom'
 
 const SimilarRecipes = () => {
 

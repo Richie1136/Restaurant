@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import './Search.css'
+import { FaSearch } from 'react-icons/fa'
 
 const Search = () => {
 
@@ -22,7 +24,9 @@ const Search = () => {
     <form className='search' onSubmit={handleSubmit}>
       <input type="text" value={searchInput} onChange={handleChange} placeholder="Search for an item" />
       <div className='search-logo'>
-        <i className='fa-solid fa-magnifying-glass'></i>
+        <i className='fa-solid fa-magnifying-glass'>
+          <FaSearch />
+        </i>
       </div>
     </form>
   )

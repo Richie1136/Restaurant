@@ -1,0 +1,40 @@
+.search {
+  width: 100%;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.search > input {
+  outline: none;
+  background: linear-gradient(35deg, #494949, #313131);
+  flex: 1;
+  margin-left: 15px;
+  font-size: 24px;
+  border: none;
+  color: white;
+  padding: 16px 48px;
+  border-radius: 16px;
+  width: 60%;
+}
+
+.search-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2b2b2d;
+  width: 50px;
+  height: 100%;
+}
+
+.search-logo > i {
+  margin-right: 5px;
+}
+
+.search-logo > i > svg {
+  position: absolute;
+  top: 50%;
+  right: 21%;
+  transform: translate(100%, -50%);
+  color: white;
+}

@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { baseUrl } from '../../api/Api'
+import Card from '../card/Card'
 
 const Searched = () => {
 
@@ -11,25 +12,26 @@ const Searched = () => {
   const KEY = process.env.REACT_APP_FOOD_API_KEY
 
 
-  useEffect(() => {
-    const getSearchedItem = async (name) => {
-      const response = await fetch(`${baseUrl}?apiKey=${KEY}&query=${name}`)
-      const data = await response.json()
-      setSearched(data)
-    }
-    getSearchedItem()
+  const getSearchedItem = useCallback(async (name) => {
+    const response = await fetch(`${baseUrl}?apiKey=${KEY}&query=${name}`)
+    const data = await response.json()
+    setSearched(data.results)
   }, [KEY])
+
+  useEffect(() => {
+    getSearchedItem(params.search)
+  }, [getSearchedItem, params.search])
 
 
   return (
-    <div>
+    <div className='item-detail'>
       {getSearched?.map(({ id, title, image }) => (
-        <div key={id}>
+        <Card key={id}>
           <Link to={`/recipe/${id}`}>
-            <h4>{title}</h4>
-            <img src={image} alt={title} />
+            <h2 className='product-name'>{title}</h2>
+            <img className='product-image' src={image} alt={title} />
           </Link>
-        </div>
+        </Card>
       ))}
     </div>
   )
