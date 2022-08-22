@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Loading from '../loading/Loading'
+import SimilarRecipes from '../similarrecipes/SimilarRecipes'
 import './Recipe.css'
 
 const Recipe = () => {
@@ -44,7 +45,7 @@ const Recipe = () => {
           <div className="product-info">
             <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h3>
             <br />
-            <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} style={{ 'width': '50%', 'marginTop': '15px' }}></h3>
+            <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} style={{ 'width': '50%' }}></h3>
           </div>
         )}
         {activeTab === 'ingredients' && (
@@ -56,6 +57,7 @@ const Recipe = () => {
           </ul>
         )}
       </div>
+      <SimilarRecipes />
     </div>
   )
 }
