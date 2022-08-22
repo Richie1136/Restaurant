@@ -45,7 +45,7 @@ const Recipe = () => {
           <div className="product-info">
             <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h3>
             <br />
-            <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} style={{ 'width': '50%' }}></h3>
+            <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} ></h3>
           </div>
         )}
         {activeTab === 'ingredients' && (

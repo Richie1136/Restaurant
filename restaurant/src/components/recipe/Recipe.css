@@ -11,17 +11,17 @@ button {
 
 .product-info {
   margin-left: 50px;
+  margin-top: 20px;
 }
 
 .detail {
   margin-top: 100px;
 }
 li {
-  font-size: 19.2px;
-  line-height: 40px;
+  font-size: 17.5px;
 }
 ul {
-  margin-top: 32px;
+  margin-top: 20px;
 }
 
 .active {

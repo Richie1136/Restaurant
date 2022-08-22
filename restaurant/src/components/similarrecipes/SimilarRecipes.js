@@ -26,12 +26,12 @@ const SimilarRecipes = () => {
 
 
   return (
-    <div style={{ marginTop: '20px' }}>
+    <div style={{ marginTop: '50px' }}>
       <h4 style={{ marginLeft: '100px' }}>Similar Recipes</h4>
       {similarRecipe?.map(({ title, sourceUrl, id, readyInMinutes }) => (
         <div key={id} style={{ display: 'flex', marginTop: '20px', textAlign: 'center' }}>
           <a href={sourceUrl} target="_blank" rel="noreferrer"><h2 className="product-name" style={{ width: '96px' }}>{title}</h2></a>
-          <h4 style={{ marginTop: '10px', width: '100%', position: 'relative', left: 0, marginBottom: '20px', padding: '10px', borderBottom: '1px solid black' }}>Time Needed: {readyInMinutes} Minutes</h4>
+          <h4 style={{ marginTop: '15px', width: '100%', position: 'relative', left: 0, marginBottom: '20px', padding: '10px', borderBottom: '1px solid black' }}>Time Needed: {readyInMinutes} Minutes</h4>
         </div>
       ))}
     </div>

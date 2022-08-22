@@ -22,7 +22,7 @@ const Search = () => {
 
   return (
     <form className='search' onSubmit={handleSubmit}>
-      <input type="text" value={searchInput} onChange={handleChange} placeholder="Search for an item" />
+      <input type="text" value={searchInput} onChange={handleChange} placeholder="Search for Recipe" />
       <div className='search-logo'>
         <i className='fa-solid fa-magnifying-glass'>
           <FaSearch />
