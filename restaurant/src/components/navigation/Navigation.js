@@ -1,7 +1,8 @@
 import { NavLink } from 'react-router-dom'
+import CartButton from '../cartbutton/CartButton'
 import './Navigation.css'
 
-const Navigation = () => {
+const Navigation = ({ onShowCart }) => {
   return (
 
     <nav className='nav'>
@@ -20,6 +21,7 @@ const Navigation = () => {
       <NavLink to='/beverages'>
         <span>Beverages</span>
       </NavLink>
+      <CartButton onClick={onShowCart} />
     </nav>
   )
 }
