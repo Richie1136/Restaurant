@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { baseUrl } from '../../api/Api'
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
+import Loading from '../loading/Loading'
 
 const Beverage = () => {
 
@@ -19,6 +20,8 @@ const Beverage = () => {
     }
     fetchBeverages()
   }, [KEY])
+
+  if (!beverages) return <Loading />
 
 
   return (

@@ -31,6 +31,13 @@ const Recipe = () => {
 
   if (!recipeDetails) return <Loading />
 
+  const handleActiveInstructions = () => {
+    setActiveTab('instructions')
+  }
+
+  const handleActiveIngredients = () => {
+    setActiveTab('ingredients')
+  }
 
   return (
     <div className='detail'>
@@ -39,8 +46,8 @@ const Recipe = () => {
         <img src={recipeDetails.image} alt={recipeDetails.title}></img>
       </div>
       <div>
-        <button className={activeTab === 'instructions' ? 'active' : ''} onClick={() => setActiveTab('instructions')}>Instructions</button>
-        <button className={activeTab === 'ingredients' ? 'active' : ''} onClick={() => setActiveTab('ingredients')}>Ingredients</button>
+        <button className={activeTab === 'instructions' ? 'active' : ''} onClick={handleActiveInstructions}>Instructions</button>
+        <button className={activeTab === 'ingredients' ? 'active' : ''} onClick={handleActiveIngredients}>Ingredients</button>
         {activeTab === 'instructions' && (
           <div className="product-info">
             <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h3>

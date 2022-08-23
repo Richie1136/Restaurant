@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { baseUrl } from '../../api/Api'
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
+import Loading from '../loading/Loading'
 
 
 const Appetizer = () => {
@@ -20,6 +21,9 @@ const Appetizer = () => {
     }
     getApps()
   }, [KEY])
+
+  if (!apps) return <Loading />
+
 
 
   return (
