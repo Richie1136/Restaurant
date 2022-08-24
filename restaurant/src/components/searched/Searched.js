@@ -2,6 +2,8 @@ import { useState, useEffect, useCallback } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { baseUrl } from '../../api/Api'
 import Card from '../card/Card'
+import Loading from '../loading/Loading'
+import MealItem from '../mealitem/MealItem'
 
 const Searched = () => {
 
@@ -23,16 +25,21 @@ const Searched = () => {
   }, [getSearchedItem, params.search])
 
 
+  if (!getSearched) return <Loading />
+
+  const mealList = getSearched?.map((meal) => (
+    <MealItem
+      id={meal.id}
+      title={meal.title}
+      image={meal.image}
+      key={meal.id}
+    />
+  ))
+
+
   return (
     <div className='item-detail'>
-      {getSearched?.map(({ id, title, image }) => (
-        <Card key={id}>
-          <Link to={`/recipe/${id}`}>
-            <h2 className='product-name'>{title}</h2>
-            <img className='product-image' src={image} alt={title} />
-          </Link>
-        </Card>
-      ))}
+      {mealList}
     </div>
   )
 }

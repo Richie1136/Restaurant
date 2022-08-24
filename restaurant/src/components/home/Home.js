@@ -1,9 +1,7 @@
 import { baseUrl } from "../../api/Api"
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Card from "../card/Card"
-import './Home.css'
 import Loading from "../loading/Loading"
+import MealItem from "../mealitem/MealItem"
 
 const Home = () => {
 
@@ -17,7 +15,6 @@ const Home = () => {
       try {
         const response = await fetch(`${baseUrl}?apiKey=${KEY}&number=30`)
         const data = await response.json()
-        console.log(data)
         setAllProducts(data)
       } catch (error) {
         console.log(error)
@@ -28,19 +25,19 @@ const Home = () => {
 
   if (!allProducts) return <Loading />
 
+  const mealList = allProducts?.results?.map((meal) => (
+    <MealItem
+      id={meal.id}
+      title={meal.title}
+      image={meal.image}
+      key={meal.id}
+    />
+  ))
+
   return (
     <>
       <div className="item-detail">
-        {allProducts?.results?.map(({ title, image, id }) => (
-          <div key={id}>
-            <Card>
-              <Link to={`/recipe/${id}`}>
-                <h2 className="product-name">{title}</h2>
-                <img className="product-image" src={image} alt={title} />
-              </Link>
-            </Card>
-          </div>
-        ))}
+        {mealList}
       </div>
     </>
   )

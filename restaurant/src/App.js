@@ -6,6 +6,9 @@ import Home from './components/home/Home';
 import Navigation from './components/navigation/Navigation';
 import AllRoutes from './components/routes/Routes';
 import MainCourse from './components/maincourse/MainCourse';
+import CartProvider from './store/CartProvider';
+import Search from './components/search/Search';
+
 
 function App() {
 
@@ -13,7 +16,10 @@ function App() {
 
   return (
     <div className='App'>
-      <AllRoutes />
+      <CartProvider>
+        <Search />
+        <AllRoutes />
+      </CartProvider>
     </div>
   )
 }

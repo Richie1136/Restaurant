@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { baseUrl } from '../../api/Api'
-import Card from '../card/Card'
-import { Link } from 'react-router-dom'
 import Loading from '../loading/Loading'
+import MealItem from '../mealitem/MealItem'
 
 
 const Appetizer = () => {
@@ -25,17 +24,18 @@ const Appetizer = () => {
   if (!apps) return <Loading />
 
 
+  const mealList = apps?.results?.map((meal) => (
+    <MealItem
+      id={meal.id}
+      title={meal.title}
+      image={meal.image}
+      key={meal.id}
+    />
+  ))
 
   return (
     <div className='item-detail'>
-      {apps?.results.map(({ title, image, id }) => (
-        <Card key={id}>
-          <Link to={`/recipe/${id}`}>
-            <h2 className='product-name'>{title}</h2>
-            <img className='product-image' src={image} alt={title} />
-          </Link>
-        </Card>
-      ))}
+      {mealList}
     </div>
   )
 }

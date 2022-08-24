@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react'
 import { baseUrl } from '../../api/Api'
-import Card from '../card/Card'
-import { Link } from 'react-router-dom'
 import Loading from '../loading/Loading'
-
+import MealItem from '../mealitem/MealItem'
 
 
 const MainCourse = () => {
@@ -17,7 +15,6 @@ const MainCourse = () => {
     const mainDish = async () => {
       const data = await fetch(`${baseUrl}?apiKey=${KEY}&type=main course`)
       const response = await data.json()
-      console.log(response)
       setMain(response)
     }
     mainDish()
@@ -25,17 +22,20 @@ const MainCourse = () => {
 
   if (!main) return <Loading />
 
+  const mealList = main?.results?.map((meal) => (
+    <MealItem
+      id={meal.id}
+      title={meal.title}
+      image={meal.image}
+      key={meal.id}
+
+    />
+  ))
+
 
   return (
     <div className='item-detail'>
-      {main?.results.map(({ title, image, id }) => (
-        <Card key={id}>
-          <Link to={`/recipe/${id}`}>
-            <h2 className='product-name'>{title}</h2>
-            <img className='product-image' src={image} alt={title} />
-          </Link>
-        </Card>
-      ))}
+      {mealList}
     </div>
   )
 }

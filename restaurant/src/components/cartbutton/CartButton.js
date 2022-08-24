@@ -1,39 +1,43 @@
 import { useState, useContext, useEffect } from 'react'
 import CartContext from '../../store/cart-context'
 import CartIcon from '../carticon/CartIcon'
-import './CartButton.css'
+import classes from './CartButton.module.css';
 
-const CartButton = ({ onClick }) => {
 
-  const [buttonHighlighted, setButtonHighlighted] = useState(false)
+const CartButton = ({ onclick }) => {
+  const [btnHighlighted, setBtnHighlighted] = useState(false)
+  const cartCtx = useContext(CartContext)
 
-  const cart = useContext(CartContext)
+  const { items } = cartCtx
 
-  const { items } = cart
+  const numberofItems = items.reduce((currentNum, item) => {
+    return currentNum + item.amount
+  }, 0)
 
-  const numberOfItems = items.reduce((currentNumber, item) => (
-    currentNumber + item.amount
-  ), 0)
+
+  const buttonClasses = `${classes.button} ${btnHighlighted ? classes.bump : ''}`;
 
   useEffect(() => {
-    if (items.length === 0) return
-    setButtonHighlighted(true)
+    if (items.length === 0) {
+      return
+    }
+    setBtnHighlighted(true)
     const timer = setTimeout(() => {
-      setButtonHighlighted(false)
+      setBtnHighlighted(false)
     }, 300);
     return () => clearTimeout(timer)
   }, [items])
 
 
   return (
-    <button className='btn' onClick={onClick}>
-      <span className='icon'>
+    <button className={buttonClasses} onClick={onclick}>
+      <span className={classes.icon}>
         <CartIcon />
       </span>
-      <span>Your Cart</span>
-      <span className='badge'>{numberOfItems}</span>
+      <span style={{ width: '72.85px', height: '23.33px' }}>Your Cart</span>
+      <span className={classes.badge}>{numberofItems}</span>
     </button>
-  )
-}
+  );
+};
 
-export default CartButton
+export default CartButton;
