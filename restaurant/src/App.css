@@ -8,15 +8,18 @@ a {
 }
 
 .product-name {
-  flex-wrap: nowrap;
-  font-size: 18px;
+  font-size: 11px;
+  width: 350px;
+  text-align: left;
+  flex-wrap: wrap;
+  align-items: left;
 }
 .product-image {
-  display: "block";
   margin-left: auto;
   margin-top: 20px;
   margin-right: auto;
   width: 100%;
+  display: block;
 }
 
 .item-detail {
