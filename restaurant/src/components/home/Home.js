@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const getAllProducts = async () => {
       try {
-        const response = await fetch(`${baseUrl}?apiKey=${KEY}&number=30`)
+        const response = await fetch(`${baseUrl}?apiKey=${KEY}&number=15`)
         const data = await response.json()
         setAllProducts(data)
       } catch (error) {

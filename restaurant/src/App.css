@@ -8,11 +8,10 @@ a {
 }
 
 .product-name {
-  font-size: 11px;
-  width: 350px;
+  font-size: 13px;
+  width: 324.8022px;
   text-align: left;
-  flex-wrap: wrap;
-  align-items: left;
+  flex-wrap: nowrap;
 }
 .product-image {
   margin-left: auto;
