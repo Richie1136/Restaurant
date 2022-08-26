@@ -1,7 +1,6 @@
 import { useContext } from 'react'
 import MealItemForm from '../mealitemform/MealItemForm'
 import CartContext from '../../store/cart-context'
-import './MealItem.css'
 import Card from '../card/Card'
 import { Link } from 'react-router-dom'
 

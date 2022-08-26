@@ -1,21 +1,35 @@
 import './App.css';
 import AllRoutes from './components/routes/Routes';
 import CartProvider from './store/CartProvider';
-import Search from './components/search/Search';
+import { useState } from 'react'
+import Cart from './components/cart/Cart';
+import Header from './components/header/Header';
+import Meals from './components/meals/Meals';
 
 
 function App() {
 
+  const [showCart, setShowCart] = useState(false)
+
+  const ShowCartHandler = () => {
+    setShowCart(true)
+  }
+
+  const HideCartHandler = () => {
+    setShowCart(false)
+  }
 
 
   return (
-    <div className='App'>
-      <CartProvider>
-        <Search />
+    <CartProvider>
+      {showCart && <Cart onClose={HideCartHandler} />}
+      <Header onShowCart={ShowCartHandler} />
+      <main>
         <AllRoutes />
-      </CartProvider>
-    </div>
-  )
+        <Meals />
+      </main>
+    </CartProvider>
+  );
 }
 
 export default App;

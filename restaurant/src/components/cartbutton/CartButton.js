@@ -4,7 +4,7 @@ import CartIcon from '../carticon/CartIcon'
 import classes from './CartButton.module.css';
 
 
-const CartButton = ({ onclick }) => {
+const CartButton = ({ onClick }) => {
   const [btnHighlighted, setBtnHighlighted] = useState(false)
   const cartCtx = useContext(CartContext)
 
