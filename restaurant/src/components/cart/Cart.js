@@ -96,8 +96,9 @@ const Cart = ({ onClose }) => {
   const [submitted, setSubmitted] = useState(false)
   const cartContext = useContext(CartContext)
 
-  const totalAmount = `$${cartContext.totalAmount}`
-  console.log(totalAmount)
+  console.log(cartContext)
+
+  const totalAmount = `$${cartContext.totalAmount.toFixed(2)}`
 
   const hasItems = cartContext.items.length > 0
 
@@ -146,7 +147,7 @@ const Cart = ({ onClose }) => {
     {cartItems}
     <div className='total'>
       <span>Total Amount</span>
-      <span>{totalAmount}</span>
+      <span>{totalAmount.replace("$", "")}</span>
     </div>
     {checkout && <Checkout onSubmit={submitOrder} onClose={onClose} />}
     {!checkout && modalActions}

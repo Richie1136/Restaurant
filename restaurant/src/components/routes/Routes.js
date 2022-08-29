@@ -8,6 +8,7 @@ import Beverage from "../beverage/Beverage";
 import Searched from "../searched/Searched";
 import Search from "../search/Search";
 import Header from "../header/Header";
+import Auth from "../auth/Auth";
 
 const AllRoutes = () => (
   <>
@@ -15,6 +16,7 @@ const AllRoutes = () => (
     <Search />
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/login' element={<Auth />} />
       <Route path='/main' element={<MainCourse />} />
       <Route path="/recipe/:id" element={<Recipe />} />
       <Route path='/apps' element={<Appetizer />} />

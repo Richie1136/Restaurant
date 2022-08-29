@@ -2,14 +2,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css'
-import React from 'react';
+import userReducer, { initialState } from './reducer';
+import { StateProvider } from './store/state-context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <StateProvider initialState={initialState} reducer={userReducer}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>
+  </StateProvider>
 );
