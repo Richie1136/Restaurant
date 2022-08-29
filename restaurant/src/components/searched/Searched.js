@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { baseUrl } from '../../api/Api'
-import Card from '../card/Card'
 import Loading from '../loading/Loading'
 import MealItem from '../mealitem/MealItem'
 

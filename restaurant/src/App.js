@@ -25,7 +25,7 @@ function App() {
       {showCart && <Cart onClose={HideCartHandler} />}
       <Header onShowCart={ShowCartHandler} />
       <main>
-        <AllRoutes />
+        {/* <AllRoutes /> */}
         <Meals />
       </main>
     </CartProvider>

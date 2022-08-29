@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import './AvaliableMeals.css'
-import Card from '../card/Card';
 import MealItem from '../mealitem/MealItem';
 import { baseUrl } from '../../api/Api';
 

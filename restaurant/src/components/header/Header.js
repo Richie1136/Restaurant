@@ -20,7 +20,7 @@ const Header = ({ onShowCart }) => (
       <NavLink to='/beverages'>
         <span>Beverages</span>
       </NavLink>
-      <CartButton onClick={onShowCart} />
+      <CartButton onclick={onShowCart} />
     </header>
   </>
 );
