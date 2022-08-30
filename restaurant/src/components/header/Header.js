@@ -3,6 +3,7 @@ import './Header.css';
 import { NavLink } from 'react-router-dom';
 import { useStateValue } from '../../store/state-context';
 import { auth } from '../../firebase'
+import { useEffect } from 'react'
 
 const Header = ({ onShowCart }) => {
 
@@ -13,6 +14,23 @@ const Header = ({ onShowCart }) => {
       auth.signOut()
     }
   }
+
+  useEffect(() => {
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        dispatch({
+          type: 'SET_USER',
+          user
+        })
+      } else {
+        dispatch({
+          type: 'SET_USER',
+          user: null
+        })
+      }
+    })
+  }, [dispatch])
+
 
   return (
     <>
