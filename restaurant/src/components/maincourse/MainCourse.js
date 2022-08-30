@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { baseUrl } from '../../api/Api'
 import Loading from '../loading/Loading'
 import MealItem from '../mealitem/MealItem'
+import Search from '../search/Search'
 
 
 const MainCourse = () => {
@@ -35,6 +36,7 @@ const MainCourse = () => {
 
   return (
     <div className='item-detail'>
+
       {mealList}
     </div>
   )

@@ -18,33 +18,32 @@ const Auth = () => {
     setPassword(event.target.value)
   }
 
+
   const signIn = (event) => {
     event.preventDefault()
     auth.signInWithEmailAndPassword(email, password)
-    try {
-      if (auth) {
-        navigate("/")
-      }
-    } catch (error) {
-      alert(error.message)
-    }
+      .then((auth) => {
+        if (auth) {
+          navigate('/')
+        }
+      }).catch(error => alert(error.message))
   }
-
 
   const signUp = (event) => {
     event.preventDefault()
     auth.createUserWithEmailAndPassword(email, password)
-    try {
-      if (auth) {
-        navigate("/")
-      }
-    } catch (error) {
-      alert(error.message)
-    }
+      .then((auth) => {
+        if (auth) {
+          navigate('/')
+        }
+      }).catch(error => alert(error.message))
   }
+
+
 
   return (
     <div className='login'>
+      <p>Welcome to Resturant App, please sign in or sign up and explore different recipes.</p>
       <div className='login-container'>
         <h1>Sign in</h1>
         <form>
@@ -54,7 +53,6 @@ const Auth = () => {
           <input type="password" onChange={handlePasswordChange} value={password} />
         </form>
         <button className='signin' onClick={signIn} type="submit">Sign In</button>
-        <br />
         <button className='signup' onClick={signUp} type="submit">Create Account</button>
       </div>
     </div>
