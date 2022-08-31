@@ -6,8 +6,7 @@ import Home from '../home/Home'
 const Meals = () => (
   <div>
     <Home />
-    {/* <MainCourse /> */}
-    {/* <Routes /> */}
+    <MainCourse />
   </div>
 )
 

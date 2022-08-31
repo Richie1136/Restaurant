@@ -2,7 +2,7 @@
   width: 100%;
   position: relative;
   margin-top: 120px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   margin-left: 400px;
   margin-right: auto;
 }
@@ -26,16 +26,16 @@
   justify-content: center;
   width: 50px;
   height: 100%;
-  margin-top: -54px;
+  margin-top: -35px;
 }
 
 .search-logo > i {
-  position: absolute;
-  margin-left: 1400px;
+  position: relative;
+  margin-left: 2200px;
 }
 
 .search-logo > i > svg {
-  position: absolute;
+  position: relative;
   top: 50%;
   right: 21%;
   transform: translate(100%, -50%);

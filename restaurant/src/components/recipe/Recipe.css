@@ -12,6 +12,7 @@ button {
 .product-info {
   margin-left: 50px;
   margin-top: 20px;
+  font-size: 18px;
 }
 
 .detail {
@@ -22,6 +23,7 @@ li {
 }
 ul {
   margin-top: 20px;
+  margin-left: 20px;
 }
 
 .active {

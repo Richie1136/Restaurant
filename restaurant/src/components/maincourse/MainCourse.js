@@ -36,7 +36,6 @@ const MainCourse = () => {
 
   return (
     <div className='item-detail'>
-
       {mealList}
     </div>
   )

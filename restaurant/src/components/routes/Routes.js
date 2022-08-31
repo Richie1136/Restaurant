@@ -12,17 +12,15 @@ import Auth from "../auth/Auth";
 
 const AllRoutes = () => (
   <>
-    <Header />
-    <Search />
     <Routes>
-      <Route path='/' element={<Home />} />
       <Route path='/login' element={<Auth />} />
-      <Route path='/main' element={<MainCourse />} />
-      <Route path="/recipe/:id" element={<Recipe />} />
-      <Route path='/apps' element={<Appetizer />} />
-      <Route path='/dessert' element={<Dessert />} />
-      <Route path='/beverages' element={<Beverage />} />
-      <Route path='/searched/:search' element={<Searched />} />
+      <Route path='/' element={<><Search />,<Home /></>} />
+      <Route path='/main' element={<><Search />, <MainCourse /></>} />
+      <Route path="/recipe/:id" element={<><Search />, <Recipe /></>} />
+      <Route path='/apps' element={<><Search />, <Appetizer /></>} />
+      <Route path='/dessert' element={<><Search />, <Dessert /></>} />
+      <Route path='/beverages' element={<><Search />, <Beverage /></>} />
+      <Route path='/searched/:search' element={<><Search />, <Searched /></>} />
     </Routes>
   </>
 )

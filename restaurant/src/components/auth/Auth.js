@@ -52,8 +52,8 @@ const Auth = () => {
           <h5>Password</h5>
           <input type="password" onChange={handlePasswordChange} value={password} />
         </form>
-        <button className='signin' onClick={signIn} type="submit">Sign In</button>
-        <button className='signup' onClick={signUp} type="submit">Create Account</button>
+        <button className='signin' onClick={signIn} type="submit"><h3>Sign In</h3></button>
+        <button className='signup' onClick={signUp} type="submit"><h3>Create Account</h3></button>
       </div>
     </div>
   )

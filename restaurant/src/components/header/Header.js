@@ -50,7 +50,7 @@ const Header = ({ onShowCart }) => {
         <NavLink to='/beverages'>
           <span>Beverages</span>
         </NavLink>
-        <CartButton onclick={onShowCart} />
+        {user && <CartButton onclick={onShowCart} />}
         <NavLink to={!user && '/login'}>
           <div className='nav-option' onClick={handleAuth}>
             <span className='nav-option-lineone'>Hello {user ? user.email : 'Guest'}</span>

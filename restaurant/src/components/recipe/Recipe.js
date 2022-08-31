@@ -63,8 +63,8 @@ const Recipe = () => {
             )}
           </ul>
         )}
+        <SimilarRecipes />
       </div>
-      <SimilarRecipes />
     </div>
   )
 }
