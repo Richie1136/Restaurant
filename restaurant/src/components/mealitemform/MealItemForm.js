@@ -1,8 +1,13 @@
 import { useRef, useState } from 'react'
 import Input from '../input/Input'
 import './MealItemForm.css'
+import { useStateValue } from '../../store/state-context';
 
 const MealItemForm = ({ onAddToCart }) => {
+
+
+  const [{ user }, dispatch] = useStateValue()
+
 
   const [isAmountValid, setIsAmountValid] = useState(true)
 
@@ -26,7 +31,7 @@ const MealItemForm = ({ onAddToCart }) => {
       <Input
         ref={amountRef} label="Amount"
         input={{ id: 'amount', type: 'number', min: '1', max: '10', defaultValue: '1' }} />
-      <button>Add</button>
+      {user && <button>Add</button>}
       {!isAmountValid && <p>Please Enter a valid amount (1-10)</p>}
     </form>
   )
