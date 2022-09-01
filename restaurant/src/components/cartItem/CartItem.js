@@ -4,7 +4,7 @@ import classes from './CartItem.module.css'
 const CartItem = ({ title, amount, onRemove, onAdd }) => (
   <li className={classes['cart-item']}>
     <div>
-      <h2>{title}</h2>
+      <h5>{title}</h5>
       <div className={classes.summary}>
         <span className={classes.amount}>x {amount}</span>
       </div>

@@ -27,7 +27,7 @@ const SimilarRecipes = () => {
 
 
   return (
-    <div style={{ width: '700px', marginLeft: 'auto', marginRight: 'auto', right: 0, float: 'right', marginTop: '-500px' }}>
+    <div style={{ width: '700px', right: 0, float: 'right', marginTop: '-800px', position: 'relative', top: '0' }}>
       <h4 style={{ marginLeft: '100px', textAlign: 'center' }}>Similar Recipes</h4>
       {similarRecipe?.map(({ title, sourceUrl, id, readyInMinutes }) => (
         <div key={id} style={{ display: 'flex', marginTop: '20px', textAlign: 'center' }}>

@@ -1,7 +1,8 @@
-/* .form {
+.checkout-form {
   margin: 1rem 0;
   height: 19rem;
   overflow: auto;
+  float: right;
 }
 
 .control {
@@ -61,4 +62,4 @@
 .invalid input {
   border-color: #aa0b20;
   background-color: #ffeff1;
-} */
+}

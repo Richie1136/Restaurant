@@ -96,7 +96,7 @@ const Checkout = ({ onClose, onSubmit }) => {
 
   return (
     <div>
-      <form className='form' onSubmit={handleConfirm}>
+      <form className='checkout-form' onSubmit={handleConfirm}>
         <div className={`control ${name ? '' : 'invalid'}`}>
           <label htmlFor='name'>Your Name</label>
           <input type='text' id='name' ref={nameInput} onChange={onNameChange} onBlur={onNameBlur} value={name} />
