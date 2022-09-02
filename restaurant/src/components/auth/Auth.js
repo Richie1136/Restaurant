@@ -24,7 +24,7 @@ const Auth = () => {
     auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
-          navigate('/')
+          navigate('/home')
         }
       }).catch(error => alert(error.message))
   }
