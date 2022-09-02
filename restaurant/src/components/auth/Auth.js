@@ -43,7 +43,7 @@ const Auth = () => {
 
   return (
     <div className='login'>
-      <p>Welcome to Resturant App, please sign in or sign up and explore different recipes.</p>
+      <p>Welcome to Resturant App, please sign in or create an account and explore different recipes.</p>
       <div className='login-container'>
         <h1>Sign in</h1>
         <form>
