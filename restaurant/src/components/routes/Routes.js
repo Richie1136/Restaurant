@@ -13,8 +13,8 @@ import Auth from "../auth/Auth";
 const AllRoutes = () => (
   <>
     <Routes>
-      <Route path='/login' element={<Auth />} />
-      <Route path='/' element={<><Search />,<Home /></>} />
+      <Route path='/home' element={<><Search />,<Home /></>} />
+      <Route path='/' element={<Auth />} />
       <Route path='/main' element={<><Search />, <MainCourse /></>} />
       <Route path="/recipe/:id" element={<><Search />, <Recipe /></>} />
       <Route path='/apps' element={<><Search />, <Appetizer /></>} />

@@ -35,7 +35,7 @@ const Header = ({ onShowCart }) => {
   return (
     <>
       <header className='header'>
-        <NavLink to='/'>
+        <NavLink to='/home'>
           <span>Random Products</span>
         </NavLink>
         <NavLink to='/apps'>
@@ -51,7 +51,7 @@ const Header = ({ onShowCart }) => {
           <span>Beverages</span>
         </NavLink>
         {user && <CartButton onclick={onShowCart} />}
-        <NavLink to={!user && '/login'}>
+        <NavLink to={!user && '/'}>
           <div className='nav-option' onClick={handleAuth}>
             <span className='nav-option-lineone'>Hello {user ? user.email : 'Guest'}</span>
             <span className='nav-option-linetwo'>{user ? 'Sign out' : 'Sign in'}</span>
