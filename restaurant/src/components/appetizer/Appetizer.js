@@ -15,7 +15,6 @@ const Appetizer = () => {
     const getApps = async () => {
       const data = await fetch(`${baseUrl}?apiKey=${KEY}&type=appetizer`)
       const response = await data.json()
-      console.log(response)
       setApps(response)
     }
     getApps()

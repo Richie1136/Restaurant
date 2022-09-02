@@ -41,8 +41,8 @@ const Recipe = () => {
 
   return (
     <div className='detail'>
-      <div>
-        <h2 style={{ marginBottom: '10px' }}>{recipeDetails.title}</h2>
+      <div className='item-details'>
+        <h2>{recipeDetails.title}</h2>
         <img src={recipeDetails.image} alt={recipeDetails.title}></img>
       </div>
       <div>

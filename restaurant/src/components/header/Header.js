@@ -36,7 +36,7 @@ const Header = ({ onShowCart }) => {
     <>
       <header className='header'>
         <NavLink to='/'>
-          <span>All Products</span>
+          <span>Random Products</span>
         </NavLink>
         <NavLink to='/apps'>
           <span>Appetizers</span>

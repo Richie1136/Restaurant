@@ -42,15 +42,15 @@ const Checkout = ({ onClose, onSubmit }) => {
     const enteredzipIsValid = is5Chars(enteredzip)
 
 
-    setName('')
-    setAddress('')
-    setZipCode('')
-    setCity('')
+    // setName('')
+    // setAddress('')
+    // setZipCode('')
+    // setCity('')
+    const { setCity, setName, setAddress, setZipCode } = ""
     setNameTouched(false)
     setAddressTouched(false)
     setCityTouched(false)
     setZipTouched(false)
-
 
     const formIsValid = enterednameIsValid && enteredaddressIsValid &&
       enteredcityIsValid && enteredzipIsValid
@@ -64,34 +64,34 @@ const Checkout = ({ onClose, onSubmit }) => {
   }
 
 
-  const onNameBlur = (e) => {
+  const onNameBlur = (event) => {
     setNameTouched(false)
   }
 
-  const onNameChange = (e) => {
-    setName(e.target.value)
+  const onNameChange = (event) => {
+    setName(event.target.value)
   }
 
-  const onAddressBlur = (e) => {
+  const onAddressBlur = (event) => {
     setAddressTouched(false)
   }
 
-  const onAddressChange = (e) => {
-    setAddress(e.target.value)
+  const onAddressChange = (event) => {
+    setAddress(event.target.value)
   }
-  const onZipBlur = (e) => {
+  const onZipBlur = (event) => {
     setZipTouched(false)
   }
 
-  const onZipChange = (e) => {
-    setZipCode(e.target.value)
+  const onZipChange = (event) => {
+    setZipCode(event.target.value)
   }
-  const onCityBlur = (e) => {
+  const onCityBlur = (event) => {
     setCityTouched(false)
   }
 
-  const onCityChange = (e) => {
-    setCity(e.target.value)
+  const onCityChange = (event) => {
+    setCity(event.target.value)
   }
 
   return (

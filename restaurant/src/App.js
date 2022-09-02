@@ -4,8 +4,6 @@ import CartProvider from './store/CartProvider';
 import { useState } from 'react'
 import Cart from './components/cart/Cart';
 import Header from './components/header/Header';
-import Meals from './components/meals/Meals';
-import Search from './components/search/Search';
 
 
 function App() {

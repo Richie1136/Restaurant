@@ -1,0 +1,35 @@
+.container {
+  width: 700px;
+  right: 0;
+  float: right;
+  margin-top: -800px;
+  position: "relative";
+  top: 0;
+}
+
+.container h4 {
+  margin-left: 100px;
+  text-align: center;
+}
+
+.recipe-info {
+  display: flex;
+  margin-top: 20px;
+  text-align: center;
+  margin-right: 90px;
+}
+
+.recipe-info a > h2 {
+  width: 96px;
+  margin-left: 20px;
+}
+
+.timeNeed {
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  width: 100%;
+  left: 0;
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
