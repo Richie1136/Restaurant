@@ -4,6 +4,9 @@ import Modal from '../modal/Modal'
 import CartContext from '../../store/cart-context'
 import CartItem from '../cartItem/CartItem'
 import Checkout from '../checkout/Checkout'
+import { useStateValue } from '../../store/state-context'
+import CurrencyFormat from 'react-currency-format'
+import { getCartTotal } from '../../store/CartProvider'
 
 
 
@@ -12,6 +15,17 @@ const Cart = ({ onClose }) => {
   const [submitting, setSubmitting] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const cartContext = useContext(CartContext)
+
+  const [{ cart, dispatch }] = useStateValue()
+
+  let cartTotalAmount = cartContext.items.map((item) => {
+    return item.amount
+  })
+
+  let totalAmount = cartTotalAmount.reduce((acc, item) => {
+    return acc + item
+  }, 0)
+
 
   const hasItems = cartContext.items.length > 0
 
@@ -58,9 +72,28 @@ const Cart = ({ onClose }) => {
 
   const cartModalContent = <>
     {cartItems}
+    <div className='total'>
+
+      <CurrencyFormat
+        renderText={(value) => (
+          <>
+            <p className='amount'>
+              Total Amount ({cart?.length} items):
+              <strong className='total-amount'>{totalAmount}</strong>
+            </p>
+          </>
+        )}
+        decimalScale={2}
+        value={getCartTotal(cart)}
+        displayType={"text"}
+        thousandSeparator={true}
+        prefix={"$"}
+      />
+    </div>
     {checkout && <Checkout onSubmit={submitOrder} onClose={onClose} />}
     {!checkout && modalActions}
   </>
+
 
   const submittingData = <p>Sending order data</p>
 

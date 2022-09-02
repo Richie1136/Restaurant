@@ -7,6 +7,9 @@ const defaultCartState = {
   totalAmount: 0
 }
 
+export const getCartTotal = (cart) =>
+  cart?.reduce((amount, item) => item.price + amount, 0)
+
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
     const updatedTotalAmount = state.totalAmount + action.amount

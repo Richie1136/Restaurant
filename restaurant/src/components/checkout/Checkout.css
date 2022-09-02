@@ -1,8 +1,7 @@
 .checkout-form {
-  margin: 1rem 0;
-  height: 19rem;
   overflow: auto;
   float: right;
+  margin: 20px 0;
 }
 
 .control {
