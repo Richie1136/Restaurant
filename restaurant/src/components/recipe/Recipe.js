@@ -50,15 +50,15 @@ const Recipe = () => {
         <button className={activeTab === 'ingredients' ? 'active' : ''} onClick={handleActiveIngredients}>Ingredients</button>
         {activeTab === 'instructions' && (
           <div className="product-info">
-            <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h3>
+            <h3 className='sum' dangerouslySetInnerHTML={{ __html: recipeDetails.summary }}></h3>
             <br />
-            <h3 dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} ></h3>
+            <h3 className='instruct' dangerouslySetInnerHTML={{ __html: recipeDetails.instructions }} ></h3>
           </div>
         )}
         {activeTab === 'ingredients' && (
           <ul>
             {recipeDetails?.extendedIngredients.map((ingredient) => (
-              <li key={ingredient.id}>{ingredient.original}</li>
+              <ol key={ingredient.id}>{ingredient.original}</ol>
             )
             )}
           </ul>

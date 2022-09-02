@@ -28,7 +28,7 @@ const SimilarRecipes = () => {
 
   return (
     <div className='container'>
-      <h4>Similar Recipes</h4>
+      <h4 className='title'>Similar Recipes</h4>
       {similarRecipe?.map(({ title, sourceUrl, id, readyInMinutes }) => (
         <div className='recipe-info' key={id}>
           <a href={sourceUrl} target="_blank" rel="noreferrer"><h2 className="product-name">{title}</h2></a>
