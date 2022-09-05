@@ -24,7 +24,7 @@ const Auth = () => {
     auth.signInWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
-          navigate('/home')
+          navigate('/random')
         }
       }).catch(error => alert(error.message))
   }
@@ -34,7 +34,7 @@ const Auth = () => {
     auth.createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
-          navigate('/')
+          navigate('/random')
         }
       }).catch(error => alert(error.message))
   }

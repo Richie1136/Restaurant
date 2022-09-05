@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Loading from "../loading/Loading"
 import MealItem from "../mealitem/MealItem"
 
-const Home = () => {
+const Random = () => {
 
   const KEY = process.env.REACT_APP_FOOD_API_KEY
 
@@ -43,4 +43,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Random
