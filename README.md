@@ -5,7 +5,6 @@ I created this project becuase i wanted to create an application that involved f
 
 This application uses different endpoints from the spoonacular api to retrieve different types of food.
 
-Finally you could see the most up to date standings of the 2022 mlb season
 
 Added authentication for signing up and for logging in to the application. This application was built with React.js, using Browser Router to send users to different routes as well as create context and provider for storing user information as well as adding, removing and clearing cart when the user submits order.
 
