@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { auth } from '../../firebase'
 import './Auth.css'
@@ -43,7 +43,6 @@ const Auth = () => {
 
   return (
     <div className='login'>
-      <p>Welcome to Resturant App, please sign in or create an account and explore different recipes.</p>
       <div className='login-container'>
         <h1>Sign in</h1>
         <form>
@@ -54,6 +53,7 @@ const Auth = () => {
         </form>
         <button className='signin' onClick={signIn} type="submit"><h3>Sign In</h3></button>
         <button className='signup' onClick={signUp} type="submit"><h3>Create Account</h3></button>
+        <p style={{ color: 'white', textAlign: 'center' }}>Welcome to Resturant App, please sign in or create account and explore different recipes.</p>
       </div>
     </div>
   )
